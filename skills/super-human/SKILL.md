@@ -268,7 +268,7 @@ AI：[加载角色] 从agency-agents-zh加载安全工程师角色定义
 #### 工作空间结构
 
 ```
-~/agency/
+~/.workbuddy/skills/agency/
 ├── clients/           # 每个客户一个文件
 │   ├── index.md       # 客户列表（含状态）
 │   └── [name].md      # 客户档案、历史、偏好
@@ -292,7 +292,7 @@ AI：[加载角色] 从agency-agents-zh加载安全工程师角色定义
 ### 角色定义位置
 
 ```
-/root/.openclaw/agency-agents-zh/
+~/.workbuddy/skills/agency-agents-zh/
 ├── academic/          # 学术领域
 ├── design/           # 设计领域
 ├── engineering/      # 工程领域（最大）
@@ -307,10 +307,10 @@ AI：[加载角色] 从agency-agents-zh加载安全工程师角色定义
 
 ```bash
 # 查看所有可用的专家角色
-cat /root/.openclaw/agency-agents-zh/AGENT-LIST.md
+cat ~/.workbuddy/skills/agency-agents-zh/AGENT-LIST.md
 
 # 查看特定角色定义
-cat /root/.openclaw/agency-agents-zh/engineering/engineering-security-engineer.md
+cat ~/.workbuddy/skills/agency-agents-zh/engineering/engineering-security-engineer.md
 ```
 
 ---
@@ -320,7 +320,7 @@ cat /root/.openclaw/agency-agents-zh/engineering/engineering-security-engineer.m
 ### 双轨记忆系统
 
 ```
-内置Agent记忆          本技能扩展记忆 (~/memory/)
+内置Agent记忆          本技能扩展记忆 (~/.workbuddy/memory/)
 ┌─────────────────────┐        ┌─────────────────────────────┐
 │ MEMORY.md           │        │ 无限分类存储                │
 │ memory/ (daily logs)│   +    │ 任何你想要的结构            │
@@ -334,7 +334,7 @@ cat /root/.openclaw/agency-agents-zh/engineering/engineering-security-engineer.m
 ### 写入策略
 
 **立即写入** - 当用户分享重要信息时：
-1. 写入 ~/memory/ 中的适当文件
+1. 写入 ~/.workbuddy/memory/ 中的适当文件
 2. 更新类别 INDEX.md
 3. 然后回应
 
@@ -345,15 +345,15 @@ cat /root/.openclaw/agency-agents-zh/engineering/engineering-security-engineer.m
 **对于小记忆（<50文件）**:
 ```bash
 # Grep足够快
-grep -r "keyword" ~/memory/
+grep -r "keyword" ~/.workbuddy/memory/
 ```
 
 **对于大记忆（50+文件）**:
 通过索引导航：
 ```
-1. ~/memory/INDEX.md → 找到类别
-2. ~/memory/{category}/INDEX.md → 找到项目
-3. ~/memory/{category}/{item}.md → 读取详情
+1. ~/.workbuddy/memory/INDEX.md → 找到类别
+2. ~/.workbuddy/memory/{category}/INDEX.md → 找到项目
+3. ~/.workbuddy/memory/{category}/{item}.md → 读取详情
 ```
 
 ---
@@ -400,12 +400,12 @@ grep -r "keyword" ~/memory/
 
 ### 2. 记忆系统冲突优化
 
-**原冲突**: memory技能使用~/memory/，内置记忆使用MEMORY.md
+**原冲突**: memory技能使用~/.workbuddy/memory/，内置记忆使用MEMORY.md
 
 **优化方案**:
-- 明确分离：内置记忆用于快速上下文，~/memory/用于深度存储
+- 明确分离：内置记忆用于快速上下文，~/.workbuddy/memory/用于深度存储
 - 建立同步机制：可选地从内置记忆同步特定内容
-- 统一索引：在 ~/memory/INDEX.md 中维护全局索引
+- 统一索引：在 ~/.workbuddy/memory/INDEX.md 中维护全局索引
 
 ### 3. 角色定义冲突优化
 
@@ -438,7 +438,7 @@ grep -r "keyword" ~/memory/
   - bmad-scrum-master → agency的项目跟踪
   - bmad-ux-designer → design技能的执行层
 - **工作流集成**: BMAD流程作为"敏捷开发模式"，与superpowers的"严格TDD模式"并存
-- **记忆共享**: BMAD的项目状态（bmad/*.yaml）同步到~/memory/agile/
+- **记忆共享**: BMAD的项目状态（bmad/*.yaml）同步到~/.workbuddy/memory/agile/
 
 ### 6. Open Design集成冲突优化（新增）
 
@@ -476,7 +476,7 @@ grep -r "keyword" ~/memory/
 
 ### 记忆系统原则（来自memory）
 
-- **分离于内置记忆** - 本系统在 ~/memory/ 中。永远不要修改：Agent的MEMORY.md（工作空间根目录），Agent的memory/文件夹（如果在工作空间中）
+- **分离于内置记忆** - 本系统在 ~/.workbuddy/memory/ 中。永远不要修改：Agent的MEMORY.md（工作空间根目录），Agent的memory/文件夹（如果在工作空间中）
 - **用户定义结构** - 在设置期间，询问他们想存储什么
 - **每个类别有一个索引** - 维护INDEX.md
 - **立即写入** - 当用户分享信息时，立即写入
@@ -495,8 +495,8 @@ grep -r "keyword" ~/memory/
 
 ### 配置文件
 
-**主配置**: `~/agency/config.md`（用于商业管理模式）
-**记忆配置**: `~/memory/config.md`（用于记忆系统）
+**主配置**: `~/.workbuddy/skills/agency/config.md`（用于商业管理模式）
+**记忆配置**: `~/.workbuddy/memory/config.md`（用于记忆系统）
 **设计配置**: `skills/super-human/design-preferences.md`（用于设计偏好）
 
 ---
@@ -518,7 +518,7 @@ grep -r "keyword" ~/memory/
 
 **修复**:
 1. 检查agency-agents-zh是否正确安装
-2. 查看 `/root/.openclaw/agency-agents-zh/AGENT-LIST.md` 确认角色名称
+2. 查看 `~/.workbuddy/skills/agency-agents-zh/AGENT-LIST.md` 确认角色名称
 3. 手动指定角色文件路径
 
 ### 问题：记忆系统混乱
@@ -526,7 +526,7 @@ grep -r "keyword" ~/memory/
 **症状**: 找不到存储的信息，或内置记忆与扩展记忆冲突
 
 **修复**:
-1. 检查 ~/memory/INDEX.md 是否最新
+1. 检查 ~/.workbuddy/memory/INDEX.md 是否最新
 2. 验证内置记忆和扩展记忆的分离
 3. 运行记忆系统诊断
 
