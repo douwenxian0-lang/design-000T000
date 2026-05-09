@@ -2,7 +2,7 @@
 name: super-human
 slug: super-human
 version: 2.0.0
-description: "全能超人 v2.0 - 融合 BMAD敏捷开发 + Open Design快速原型 + superpowers + agency + design + memory。支持敏捷开发全流程、Open Design原型生成、193个专业角色库。"
+description: "全能超人 v2.0 - 融合 BMAD敏捷开发 + Open Design快速原型 + superpowers + agency + design + memory。支持敏捷开发全流程、Open Design原型生成、专家角色库支持。"
 metadata: {"clawdbot":{"emoji":"🦸","requires":{"bins":[]},"os":["linux","darwin","win32"]}}
 ---
 
@@ -18,7 +18,7 @@ metadata: {"clawdbot":{"emoji":"🦸","requires":{"bins":[]},"os":["linux","darw
 - ✅ **模式自动识别** - 开发任务用superpowers流程，商业任务用agency流程
 - ✅ **BMAD敏捷开发** - 集成BMAD方法，支持编排器、产品经理、架构师、开发者、Scrum主管、UX设计师角色
 - ✅ **Open Design快速原型** - 支持 Open Design 编辑级落地页和幻灯片原型生成
-- ✅ **角色动态加载** - 从193个专业角色库中按需加载最适合的专家
+- ✅ **角色动态加载** - 支持专业角色库（需单独安装角色文件）
 - ✅ **记忆系统协同** - 内置记忆+扩展记忆，快慢结合
 - ✅ **设计智能执行** - 自动学习视觉偏好，生成符合品味的作品
 - ✅ **冲突自动优化** - 工作流程无缝衔接，无重复、无矛盾
@@ -157,7 +157,7 @@ AI：[加载角色] 从agency-agents-zh加载安全工程师角色定义
     [执行] 按照安全工程师的工作流程执行任务...
 ```
 
-**可用的193个专业角色**（部分示例）:
+**可用的专业角色**（示例 - 需单独安装角色文件）:
 - **工程领域**: 安全工程师、后端架构师、前端开发者、DevOps自动化师、数据工程师
 - **设计领域**: UI设计师、UX研究员、视觉故事讲述者
 - **中国市场原创**: 小红书运营专家、抖音内容策略师、微信小程序开发者
@@ -519,7 +519,7 @@ grep -r "keyword" ~/.workbuddy/memory/
 **已融合的技能（核心）**:
 - `superpowers` - 开发工作流（TDD、子代理驱动）
 - `agency` - 商业管理机构（客户、项目、定价）
-- `agency-agents-zh` - 193个专业角色库
+- `agency-agents-zh` - 专家角色库框架（需单独安装角色文件）
 - `design` - 设计执行和偏好学习
 - `memory` - 扩展记忆系统
 
