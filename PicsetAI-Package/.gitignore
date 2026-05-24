@@ -1,0 +1,13 @@
+# PicsetAI-Package auto-generated
+__pycache__/
+*.pyc
+*.pyo
+downloads/
+*.png
+!docs/assets/*.png
+.env
+.venv/
+venv/
+node_modules/
+.DS_Store
+Thumbs.db
